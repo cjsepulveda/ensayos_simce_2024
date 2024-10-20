@@ -1,7 +1,6 @@
 import pathlib
 from dash import Dash, dcc, html, Input, Output
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objs as go
 
 PATH = pathlib.Path(__file__).parent
