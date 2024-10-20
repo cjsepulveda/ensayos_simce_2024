@@ -203,8 +203,9 @@ def update_charts(nivel,test,asig):
                             hovertemplate = new_hovertemplate)
                         
             trace01.update_layout(barmode="group", template='simple_white')
-            b='Puntajes'
-            
+            b='Variaciones'
+            a ='Lenguaje y Mateáticas'
+            n ='1° y 2° Medio'
     
     # actualizaciones LAYOUT gráfico
 
