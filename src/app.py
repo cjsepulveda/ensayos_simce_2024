@@ -85,6 +85,29 @@ className="menu",
 
     ])
 
+# callback para activar y desactivar opciones nivel y asignatura
+
+@app.callback(
+    Output('level','disabled'),
+    Output('subject','disabled'),
+    Input('test','value')
+    )
+
+def active_level_subject(test_value):
+
+    if test_value=='var_score':
+
+        options_disabled_level = True
+        options_disabled_subject = True
+    
+    else:
+
+        options_disabled_level = False
+        options_disabled_subject = False
+
+    return options_disabled_level, options_disabled_subject
+
+
 
 # callback para filtrar gráfico segun nivel, asignatura y descriptor
 @app.callback(
@@ -199,7 +222,7 @@ def update_charts(nivel,test,asig):
 
             trace01.add_bar( x=graph_x_axes, y=graph_y_axes_score_var, 
                             name='VARIACIONES PUNTAJES SIMCE', 
-                            marker_color=color_score,
+                            marker_color='Green',
                             hovertemplate = new_hovertemplate)
                         
             trace01.update_layout(barmode="group", template='simple_white')
